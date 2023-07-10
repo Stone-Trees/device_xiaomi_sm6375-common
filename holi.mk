@@ -386,6 +386,7 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     init.batterysecret.rc \
+    fstab.zram \
     init.class_main.sh \
     init.goodix.events.sh \
     init.mi.btmac.sh \
