@@ -170,6 +170,7 @@ persist.vendor.btstack.enable.lpa=true
 
 # Camera
 camera.disable_zsl_mode=true
+persist.vendor.camera.logInfoMask=false
 
 # Charger
 persist.vendor.charge.oneTrack=true
