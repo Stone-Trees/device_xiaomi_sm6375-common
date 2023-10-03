@@ -37,3 +37,9 @@ wifi.pktlog.debug.0.chen       u:object_r:exported_system_prop:s0
 
 # 
 ro.factory_mode                u:object_r:exported_default_prop:s0
+
+# SettingsLib
+settingsdebug.instant.packages u:object_r:settingslib_prop:s0
+
+# Camera
+vendor.camera.aux.packagelist           u:object_r:vendor_camera_prop:s0

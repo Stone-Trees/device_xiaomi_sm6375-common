@@ -8,3 +8,5 @@ allow stflashtool nfc_device:chr_file {ioctl read write getattr lock append map 
 get_prop(stflashtool, vendor_radio_prop)
 get_prop(stflashtool, vendor_nfc_prop)
 set_prop(stflashtool, vendor_nfc_prop)
+
+allow stflashtool nfc_prop:file { read };
