@@ -6,4 +6,7 @@
 
 <resources>
     <dimen name="rounded_corner_content_padding">47px</dimen>
+
+<!-- Window level Blur -->
+    <dimen name="max_window_blur_radius">90px</dimen>
 </resources>
