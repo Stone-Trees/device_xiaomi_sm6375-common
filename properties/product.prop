@@ -14,3 +14,9 @@ persist.vendor.qti.telephony.vt_cam_interface=2
 debug.media.transcoding.codec_max_operating_rate_720P=240
 debug.media.transcoding.codec_max_operating_rate_1080P=120
 
+# Google Photos
+debug.photos.eraser_camo=1
+debug.photos.eraser_suggestion=1
+debug.photos.force_pixel_eol=1
+debug.photos.p_editr.eraser=1
+
