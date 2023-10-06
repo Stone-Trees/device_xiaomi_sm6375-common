@@ -238,3 +238,6 @@ BOARD_VNDK_VERSION := current
 
 # Inherit the proprietary files
 include vendor/xiaomi/sm6375-common/BoardConfigVendor.mk
+
+# SELinux
+SELINUX_IGNORE_NEVERALLOWS := true
