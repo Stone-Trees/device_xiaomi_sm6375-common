@@ -516,7 +516,7 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
