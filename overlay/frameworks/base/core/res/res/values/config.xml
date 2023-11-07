@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009 The Android Open Source Project
+     <!-- Copyright (C) 2009 The Android Open Source Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -8,12 +8,11 @@
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
-     limitations under the License.
--->
+     limitations under the License. -->
 
-<!-- These resources are around just to allow their values to be customized
+     <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds.  Do not translate. -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+     <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -28,7 +27,7 @@
     <!-- MMS user agent string -->
     <string name="config_mms_user_agent" translatable="false">Android-Mms/2.0</string>
 
-     <!-- This string array should be overridden by the device to present a list of network
+    <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->
     <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
@@ -74,8 +73,7 @@
            remote submix module.  This module is used to record and stream system
            audio output to the WiFi display encoder in the media server.
          * The remote submix module "audio.r_submix.default" must be installed on the device.
-         * The device must be provisioned with HDCP keys (for protected content).
-    -->
+         * The device must be provisioned with HDCP keys (for protected content). -->
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Set to true if the wifi display supports compositing content stored
@@ -86,8 +84,7 @@
          buffers (if possible) when presenting content to a wifi display because
          the content may be blanked.
          This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
-         flag is set for wifi displays.
-    -->
+         flag is set for wifi displays. -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
     <!-- ComponentName of a dream to show whenever the system would otherwise have
@@ -116,8 +113,7 @@
          clocks and disable the touch controller while the display is on.
          This resource should be set to "true" when a doze component has been specified
          to maximize power savings but not all devices support it.
-         Refer to power.h for details.
-    -->
+         Refer to power.h for details. -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
 
     <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
@@ -136,8 +132,7 @@
          This resource should be set to "true" when a doze component has been specified
          to maximize power savings but not all devices support it.
 
-         Refer to autosuspend.h for details.
-    -->
+         Refer to autosuspend.h for details. -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
     <!-- Enable doze alwaysOn Display -->
@@ -166,8 +161,7 @@
 
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
-         If no value is found for the rat-name in use, the system default will be applied.
-    -->
+         If no value is found for the rat-name in use, the system default will be applied. -->
     <string-array name="config_mobile_tcp_buffers">
         <item>5gnr:2097152,6291456,16777216,512000,2097152,8388608</item>
         <item>lte:2097152,4194304,8388608,262144,524288,1048576</item>
@@ -332,17 +326,14 @@
 
     <!-- Should the pinner service pin the Home application? -->
     <bool name="config_pinnerHomeApp">false</bool>
-<!-- Should the pinner service pin the Home application? -->
-    <bool name="config_pinnerHomeApp">false</bool>
-
-<!-- A path similar to frameworks/base/core/res/res/values/config.xml
+    
+    <!-- A path similar to frameworks/base/core/res/res/values/config.xml
       config_mainBuiltInDisplayCutout that describes a path larger than the exact path of a display
       cutout. If present as well as config_enableDisplayCutoutProtection is set to true, then
       SystemUI will draw this "protection path" instead of the display cutout path that is normally
       used for anti-aliasing.
       This path will only be drawn when the front-facing camera turns on, otherwise the main
-      DisplayCutout path will be rendered
-       -->
+      DisplayCutout path will be rendered -->
     <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">
 	M 50,60
 	a 40,40 0 1 0 80,0
@@ -362,7 +353,7 @@
     <!-- The max scale for the wallpaper when it's zoomed in -->
     <item name="config_wallpaperMaxScale" format="float" type="dimen">1</item>
 
- <!-- The battery current divider, some kernel report current value in mA other in µA.
+    <!-- The battery current divider, some kernel report current value in mA other in µA.
 
          Leave 1 if you have mA, put 1000 if you have µA -->
     <integer name="config_battCurrentDivider" translatable="false">1</integer>
@@ -372,8 +363,7 @@
     <bool name="config_spatial_audio_head_tracking_enabled_default">true</bool>
 
     <!-- If not empty, sets the AVC codec profile level used for the internal screen recorder.
-         Possible values: 3, 3.1, 3.2, 4, 4.1, 4.2
-    -->
+         Possible values: 3, 3.1, 3.2, 4, 4.1, 4.2 -->
     <string name="config_screenRecorderAVCProfileLevel" translatable="false">3.1</string>
  
     <!-- Whether the device enable the standalone (SA) mode of 5G NR.-->
@@ -381,12 +371,9 @@
 
     <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
     <bool name="config_telephony5gNonStandalone">true</bool>
-<<<<<<< HEAD:overlay/frameworks/base/core/res/res/values/config.xml
-    
+
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
-</resources>
-=======
 
     <!-- The number of volume steps for the notification stream -->
     <integer name="config_audio_notif_vol_steps">15</integer>
@@ -400,4 +387,4 @@
     <!-- The default volume for the ring stream -->
     <integer name="config_audio_ring_vol_default">11</integer>
 </resources>
->>>>>>> f5397e5 (sm6375-common: Use overlays to set Default vol steps):overlay/HoliFrameworksOverlay/res/values/config.xml
+
