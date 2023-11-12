@@ -31,3 +31,6 @@ persist.sys.fw.bservice_age?=120000
 persist.sys.fw.bservice_limit?=6
 persist.sys.fw.bservice_enable?=true
 
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
+
