@@ -464,6 +464,8 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.xiaomi-multihal \
     libsensorndkbridge
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Servicetracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.0.vendor \
