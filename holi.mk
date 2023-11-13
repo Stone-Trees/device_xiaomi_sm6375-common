@@ -255,7 +255,10 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
+    android.hardware.keymaster@4.1.vendor \
+    android.hardware.security.rkp-V1-ndk.vendor \
+    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
+    android.hardware.security.keymint-V1-ndk_platform.vendor \
 
 # Media
 PRODUCT_PACKAGES += \
