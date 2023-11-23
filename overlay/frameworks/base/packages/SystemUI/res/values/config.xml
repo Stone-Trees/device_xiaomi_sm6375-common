@@ -68,8 +68,4 @@
 
     <!-- Whether show refresh rate QS tile -->
     <bool name="config_showRefreshRateQsTile">true</bool>
-
-    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
-    vibrator is capable of subtle vibrations -->
-    <bool name="config_vibrateOnIconAnimation">true</bool>
 </resources>
