@@ -308,7 +308,7 @@
     <!-- Default value for performant auth feature. -->
     <bool name="config_performantAuthDefault">true</bool>
 
-<!-- The default peak refresh rate for a given device. Change this value if you want to allow
+    <!-- The default peak refresh rate for a given device. Change this value if you want to allow
          for higher refresh rates to be automatically used out of the box -->
     <integer name="config_defaultRefreshRate">0</integer>
 
@@ -432,6 +432,12 @@
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryContentProvider</item>
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryActivity</item>
     </string-array>
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/qcom-battery/fastchg_mode</string>
+
+    <!-- Expected value from fast charging status file  -->
+    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
 
     <!-- The default value for transition animation scale found in developer settings.
         1.0 corresponds to 1x animator scale, 0 means that there will be no transition
