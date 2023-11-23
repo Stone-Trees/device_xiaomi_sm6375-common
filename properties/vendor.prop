@@ -292,6 +292,7 @@ persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.redir_party_num=0
 ro.telephony.call_ring.multiple=false
+persist.vendor.qti.telephony.vt_cam_interface=2
 ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=33,33
 ro.vendor.radio.5g=3
