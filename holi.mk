@@ -238,8 +238,17 @@ PRODUCT_PACKAGES += \
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/idc/,$(TARGET_COPY_OUT_SYSTEM)/usr/idc) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout)
+    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/configs/keylayout/uinput-fortsense.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fortsense.kl \
+    $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
+    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl \
+    $(LOCAL_PATH)/configs/keylayout/holi-qrdsku1-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/holi-qrdsku1-snd-card_Button_Jack.kl
+
+# Input Idc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/uinput-fortsense.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fortsense.idc \
+    $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
+    $(LOCAL_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-goodix.idc
 
 # IPACM
 PRODUCT_PACKAGES += \
