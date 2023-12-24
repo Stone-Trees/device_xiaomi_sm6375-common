@@ -22,6 +22,6 @@
     <bool name="def_screen_brightness_automatic_mode">true</bool>
 
     <!-- Speed up the animations -->
-    <fraction name="def_window_animation_scale">0%</fraction>
-    <fraction name="def_window_transition_scale">50%</fraction>
+    <fraction name="def_window_animation_scale">80%</fraction>
+    <fraction name="def_window_transition_scale">80%</fraction>
 </resources>
