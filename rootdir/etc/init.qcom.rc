@@ -333,6 +333,10 @@ on post-fs-data
     mkdir /dev/socket/wifihal 0770 wifi wifi
     chmod 2770 /dev/socket/wifihal
 
+    #Create FM dir for patchdownloader
+    mkdir /data/vendor/fm 0770 system system
+    chmod 0770 /data/vendor/fm
+    
     # Create /data/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
 
