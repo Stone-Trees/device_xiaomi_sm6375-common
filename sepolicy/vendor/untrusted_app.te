@@ -4,3 +4,14 @@ allow untrusted_app proc_zoneinfo:file r_file_perms;
 allow untrusted_app tmpfs:lnk_file { read };
 allow untrusted_app shell_test_data_file:dir { search };
 allow untrusted_app app_data_file:file { execute };
+
+allow untrusted_app mnt_vendor_file:dir { search };
+allow untrusted_app mnt_vendor_file:dir { getattr };
+allow untrusted_app block_device:dir { search };
+allow untrusted_app proc_overcommit_memory:file { read };
+
+allow untrusted_app proc_tty_drivers:file { read };
+allow untrusted_app qemu_hw_prop:file { read };
+allow untrusted_app qemu_sf_lcd_density_prop:file { read };
+allow untrusted_app serialno_prop:file { read };
+allow untrusted_app proc_max_map_count:file { read };
