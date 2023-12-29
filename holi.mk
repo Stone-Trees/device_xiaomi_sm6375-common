@@ -404,6 +404,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext-privapp-permissions-qti.xml
 
+# Remove unwanted packages
+ifeq ($(TARGET_DEBLOAT),true)
+PRODUCT_PACKAGES += \
+    RemovePackages   
+endif
+
 # RIL
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
