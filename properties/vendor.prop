@@ -221,6 +221,11 @@ ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.use_content_detection_for_refresh_rate=false
 ro.surface_flinger.support_kernel_idle_timer=true
 
+# SkiaGL Threaded
+debug.renderengine.backend=skiaglthreaded
+debug.hwui.renderer=skiagl
+renderthread.skia.reduceopstasksplitting=true
+
 # Graphics
 debug.renderengine.backend=skiaglthreaded
 debug.egl.hw=1
