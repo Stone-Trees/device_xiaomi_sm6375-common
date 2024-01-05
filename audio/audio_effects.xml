@@ -43,6 +43,13 @@
         <library name="shoebox" path="libshoebox.so"/>
         <library name="v4a_re" path="libv4a_re.so"/>
         <library name="spatializer" path="libspatialaudio.so"/>
+        <!-- DOLBY DAP -->
+        <library name="dap_sw" path="libswdap.so"/>
+        <library name="dap_hw" path="libhwdap.so"/>
+        <!-- DOLBY END -->
+        <!--DOLBY GAME-->
+        <library name="gamedap" path="libswgamedap.so"/>
+        <!--DOLBY END-->
     </libraries>
     <effects>
         <effect name="v4a_standard_re" library="v4a_re" uuid="90380da3-8536-4744-a6a3-5731970e640f"/>
@@ -94,22 +101,19 @@
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
         <effect name="v4a_standard_re" library="v4a_re" uuid="90380da3-8536-4744-a6a3-5731970e640f"/>
         <effect name="spatializer" library="spatializer" uuid="cc4677de-ff72-11eb-9a03-0242ac130003"/>
+        <!-- DOLBY DAP -->
+        <effectProxy name="dap" library="proxy" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa">
+            <libsw library="dap_sw" uuid="6ab06da4-c516-4611-8166-452799218539"/>
+            <libhw library="dap_hw" uuid="a0c30891-8246-4aef-b8ad-d53e26da0253"/>
+        </effectProxy>
+        <!-- DOLBY END -->
+        <!--DOLBY GAME-->
+        <effect name="gamedap" library="gamedap" uuid="3783c334-d3a0-4d13-874f-0032e5fb80e2"/>
+        <!--DOLBY END-->
         </effects>
     <postprocess>
-        <stream type="music">
-            <apply effect="music_helper"/>
-        </stream>
-        <stream type="ring">
-            <apply effect="ring_helper"/>
-        </stream>
-        <stream type="alarm">
-            <apply effect="alarm_helper"/>
-        </stream>
         <stream type="voice_call">
             <apply effect="voice_helper"/>
-        </stream>
-        <stream type="notification">
-            <apply effect="notification_helper"/>
         </stream>
     </postprocess>
     <preprocess>

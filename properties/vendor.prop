@@ -18,8 +18,6 @@ vendor.voice.path.for.pcm.voip=true
 ro.vendor.audio.sos=true
 ro.vendor.audio.game.mode=true
 vendor.audio.offload.multiaac.enable=true
-vendor.audio.dolby.ds2.enabled=false
-vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.passthrough=false
 ro.vendor.audio.sdk.ssr=false
@@ -341,3 +339,13 @@ ro.hardware.wlan.dbs=0
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Dolby
+vendor.audio.dolby.ds2.enabled=true
+vendor.audio.dolby.ds2.hardbypass=false
+vendor.audio.enable.mirrorlink=false
+ro.vendor.dolby.dax.version=DAX3_3.6.0.12_r1
+ro.vendor.product.device.db=OP_DEVICE
+ro.vendor.product.manufacturer.db=OP_PHONE
+vendor.product.device=OP_PHONE
+vendor.product.manufacturer=OPD
