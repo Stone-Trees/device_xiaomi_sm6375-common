@@ -1,0 +1,103 @@
+#
+# Copyright (C) 2022 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on early-boot
+    # SSR Setup
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys4/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys5/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys6/restart_level RELATED
+    write /sys/bus/msm_subsys/devices/subsys7/restart_level RELATED
+
+on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/vendor_modprobe.sh
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules q6_pdr_dlkm q6_notifier_dlkm snd_event_dlkm apr_dlkm adsp_loader_dlkm q6_dlkm native_dlkm pinctrl_lpi_dlkm swr_dlkm platform_dlkm stub_dlkm wcd_core_dlkm wsa881x_analog_dlkm bolero_cdc_dlkm va_macro_dlkm rx_macro_dlkm tx_macro_dlkm bt_fm_slim wcd938x_dlkm wcd938x_slave_dlkm wcd937x_dlkm wcd937x_slave_dlkm sipa_dlkm machine_dlkm radio-i2c-rtc6226-qca cdsprm
+    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qti.early_init.sh
+    setprop ro.soc.model ${ro.vendor.qti.soc_model}
+    wait /sys/devices/soc0/soc_id
+
+on init
+    chmod 666 /sys/module/camera/drivers/platform:CAM-FLASH-DRIVER/5c1b000.qcom,cci0:qcom,camera-flash@0/ktd2691_flash
+
+# Fingerprint
+on boot
+    #goodix fp
+    chmod 0666 /dev/goodix_fp
+    chown system system /dev/goodix_fp 
+    mkdir /data/vendor/goodix 0777 system system
+    mkdir /data/vendor_de/0/goodix 0770 system system
+
+    #fpc fingerprint
+    chown system system  /sys/bus/platform/devices/soc:fpc1020/hw_reset
+    chown system system  /sys/bus/platform/devices/soc:fpc1020/irq
+    chown system system  /sys/bus/platform/devices/soc:fpc1020/wakeup_enable
+    chown system system  /sys/bus/platform/devices/soc:fpc1020/regulator_enable
+    chown system system  /sys/bus/platform/devices/soc:fpc1020/compatible_all
+    chown system system  /sys/bus/platform/devices/soc:fpc1020/fingerdown_wait
+
+    chmod 0644  /sys/bus/platform/devices/soc:fpc1020/hw_reset
+    chmod 0644  /sys/bus/platform/devices/soc:fpc1020/irq
+    chmod 0644  /sys/bus/platform/devices/soc:fpc1020/wakeup_enable
+    chmod 0644  /sys/bus/platform/devices/soc:fpc1020/regulator_enable
+    chmod 0644  /sys/bus/platform/devices/soc:fpc1020/compatible_all
+    chmod 0644 /sys/bus/platform/devices/soc:fpc1020/fingerdown_wait
+
+    #for touchscreen
+    chown system system /sys/bus/i2c/drivers/fts_ts/2-0038/fts_edge_mode
+    chmod 0666 /sys/bus/i2c/drivers/fts_ts/2-0038/fts_edge_mode
+    chown system system /sys/bus/i2c/devices/2-0038/fts_charger_mode
+    chmod 0666 /sys/bus/i2c/devices/2-0038/fts_charger_mode
+    chown system system /sys/bus/i2c/devices/2-0038/fts_rw_reg
+    chmod 0666 /sys/bus/i2c/devices/2-0038/fts_rw_reg
+
+    # for thermal
+    chmod 0777 /sys/class/power_supply/bq25890_charger/constant_charge_current_max
+
+    chmod 0777 /sys/bus/coresight/devices/coresight-tmc-etr/block_size
+    chmod 0777 /dev/byte-cntr
+
+    # IR
+    chown system system /dev/lirc0
+    chmod 0666 /dev/lirc0
+
+    # HBM/AOD
+    chmod 0777 /sys/class/drm/card0-DSI-1/disp_param
+    chmod 0777 /sys/class/drm/card0-DSI-1/mipi_reg
+
+    # touch
+    chown system system /sys/class/touch/touch_dev/palm_sensor
+    chmod 0664 /sys/class/touch/touch_dev/palm_sensor
+
+on property:sys.tp.grip_enable=0
+    write /sys/devices/platform/soc/4c88000.i2c/i2c-2/2-0038/fts_edge_mode 0
+
+on property:sys.tp.grip_enable=90
+    write /sys/devices/platform/soc/4c88000.i2c/i2c-2/2-0038/fts_edge_mode 1
+
+on property:sys.tp.grip_enable=270
+    write /sys/devices/platform/soc/4c88000.i2c/i2c-2/2-0038/fts_edge_mode 2
+
+# NFC
+on post-fs-data
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
+service stflashtool /vendor/bin/STFlashTool
+    class late_start
+    group nfc
+    user nfc
+    oneshot
+
+on boot
+    start nfc_hal_service
+
+on post-fs
+    start stflashtool
+
+on property:ro.boot.hwname=*
+    setprop ro.boot.product.hardware.sku ${ro.boot.hwname}
