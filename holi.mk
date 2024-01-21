@@ -544,6 +544,10 @@ PRODUCT_COPY_FILES += \
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
