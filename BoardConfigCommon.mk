@@ -163,7 +163,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 # Platform
 BOARD_VENDOR := xiaomi
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := holi
+
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/properties/odm.prop
