@@ -169,7 +169,7 @@ on property:vendor.display.lcd_density=640
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
-on charger
+on property:init.svc.vendor.charger=running
     mount_all /vendor/etc/charger_fstab.qti --early
     write /sys/kernel/boot_adsp/boot 1
     #restart charger after ADSP is out of reset
