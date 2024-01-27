@@ -32,6 +32,15 @@ $(VM_SYSTEM_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating $(VM_SYSTEM_MOUNT_POINT)"
 	@mkdir -p $(TARGET_OUT_VENDOR)/vm-system
 
+CNE_LIBS := libvndfwk_detect_jni.qti.so
+CNE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_APPS)/CneApp/lib/arm64/,$(notdir $(CNE_LIBS)))
+$(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "CNE lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS)
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT)
 ALL_DEFAULT_INSTALLED_MODULES += $(BT_FIRMWARE_MOUNT_POINT)
 ALL_DEFAULT_INSTALLED_MODULES += $(DSP_MOUNT_POINT)
