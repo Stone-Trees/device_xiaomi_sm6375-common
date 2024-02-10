@@ -20,6 +20,10 @@ ro.lmk.kill_timeout_ms=15
 sys.fp.miui.token=0
 
 # Graphics
+debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
+debug.sf.high_fps_early_phase_offset_ns=-4000000
+debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
 ro.sf.force_hwc_brightness=1
