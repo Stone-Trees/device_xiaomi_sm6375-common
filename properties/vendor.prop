@@ -223,13 +223,12 @@ ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.use_content_detection_for_refresh_rate=false
 ro.surface_flinger.support_kernel_idle_timer=true
 
-# SkiaGL Threaded
-debug.renderengine.backend=skiaglthreaded
-debug.hwui.renderer=skiagl
-renderthread.skia.reduceopstasksplitting=true
-
 # Graphics
+ro.hwui.render_ahead=5
+debug.sf.enable_egl_image_tracker=1
+debug.hwui.skia_atrace_enabled=false
 debug.renderengine.backend=skiaglthreaded
+debug.hwui.renderer=vulkan
 debug.egl.hw=1
 debug.mdpcomp.logs=0
 debug.hwui.use_hint_manager=true
