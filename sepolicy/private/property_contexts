@@ -37,3 +37,7 @@ wifi.pktlog.debug.0.chen       u:object_r:exported_system_prop:s0
 
 # 
 ro.factory_mode                u:object_r:exported_default_prop:s0
+
+# Fling
+ro.max.fling_velocity                   u:object_r:exported_system_prop:s0
+ro.min.fling_velocity                   u:object_r:exported_system_prop:s0
