@@ -423,5 +423,7 @@
         user-set value if toggled by settings so the "Transition animation scale" setting
         should also be hidden if intended to be permanent. -->
     <item name="config_appTransitionAnimationDurationScaleDefault" format="float" type="dimen">0.5</item>
-</resources>
 
+    <!-- Amount of time in ms the user needs to press the relevant keys to trigger the screenshot chord -->
+    <integer name="config_screenshotChordKeyTimeout">0</integer>
+ </resources>
