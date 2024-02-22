@@ -344,6 +344,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
 
+#Modify by yanqiwen for st bringup
+/dev/st21nfc              0660    nfc         nfc
+
 # UIO devices
 /dev/uio0                 0660   system     system
 /dev/uio1                 0660   system     system
