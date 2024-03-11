@@ -595,7 +595,7 @@ vendor/lib64/libqmi_legacy.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
 
-# RIL
+# RIL from missi-user 13 TKQ1.221114.001 V14.0.6.0.TMPMIXM release-keys
 etc/permissions/privapp-permissions-qti.xml
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 -system_ext/app/atfwd/atfwd.apk
