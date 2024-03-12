@@ -34,3 +34,5 @@ persist.sys.fw.bservice_enable?=true
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
 
+#Seamless transfer
+sys.fflag.override.settings_seamless_transfer=true
