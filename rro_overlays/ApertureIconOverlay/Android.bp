@@ -1,11 +1,10 @@
 //
-// Copyright (C) 2024 The LineageOS Project
+// Copyright (C) 2023 Paranoid Android
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 runtime_resource_overlay {
-    name: "ApertureOverlay",
-    sdk_version: "current",
+    name: "ApertureIconOverlay",
     product_specific: true,
 }
