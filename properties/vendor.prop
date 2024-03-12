@@ -228,6 +228,7 @@ ro.surface_flinger.vsync_event_phase_offset_ns=2000000
 ro.surface_flinger.support_kernel_idle_timer=true
 
 # Graphics
+debug.sf.disable_client_composition_cache=1
 ro.hwui.render_ahead=5
 debug.sf.enable_egl_image_tracker=1
 debug.hwui.skia_atrace_enabled=false
