@@ -27,6 +27,7 @@ debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
 ro.sf.force_hwc_brightness=1
+vendor.display.disable_rotator_downscale=1
 
 # IMS
 persist.dbg.volte_avail_ovr=1
