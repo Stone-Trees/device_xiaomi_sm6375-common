@@ -45,4 +45,7 @@
     <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/battery/charge_counter</string>
     <string name="config_batteryDesignCapacity">/sys/class/power_supply/battery/charge_full_design</string>
     <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
+
+    <!-- Whether to show a preference item for regulatory information in About phone -->
+    <bool name="config_show_regulatory_info">false</bool>
 </resources>
